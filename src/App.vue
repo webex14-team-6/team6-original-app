@@ -1,26 +1,45 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <h1>お酒</h1>
+  <PropsCommentary
+    v-for="(alchole, index) in alcholes"
+    v-bind:key="index"
+    v-bind:alchole="alchole"
+  />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue"
+import PropsCommentary from "./components/PropsCommentary.vue"
 
 export default {
-  name: "App",
   components: {
-    HelloWorld,
+    PropsCommentary,
+  },
+  data() {
+    return {
+      alcholes: [
+        {
+          name: "ハイボール ",
+          frequency: "5~9",
+          taste: "特になし",
+          overview: "ウイスキーをソーダ水で割ったもの",
+          //image: src="@/assets/ganymede.jpeg"
+        },
+        {
+          name: "ハイボール ",
+          frequency: "5~9",
+          taste: "特になし",
+          overview: "ウイスキーをソーダ水で割ったもの",
+          //image: "logo.png",
+        },
+        {
+          name: "ハイボール ",
+          frequency: "5~9",
+          taste: "特になし",
+          overview: "ウイスキーをソーダ水で割ったもの",
+          //image: "logo.png",
+        },
+      ],
+    }
   },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
