@@ -4,7 +4,18 @@
     <router-link to="/about">About</router-link>
   </nav>
   <router-view />
+  <AlcholeCategory />
 </template>
+
+<script>
+import AlcholeCategory from "./components/AlcholeCategory.vue"
+
+export default {
+  components: {
+    AlcholeCategory,
+  },
+}
+</script>
 
 <style>
 #app {
