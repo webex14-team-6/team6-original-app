@@ -5,14 +5,17 @@
   </nav>
   <router-view />
   <AlcholeCategory />
+  <HamburgerMevu />>
 </template>
 
 <script>
-import AlcholeCategory from "./components/AlcholeCategory.vue"
+import AlcholeCategory from "@/components/AlcholeCategory.vue"
+import HamburgerMevu from "./components/HamburgerMevu.vue"
 
 export default {
   components: {
     AlcholeCategory,
+    HamburgerMevu,
   },
 }
 </script>

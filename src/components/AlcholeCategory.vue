@@ -18,7 +18,7 @@ export default {
     return {
       alcholes: [
         {
-          name: "酒１",
+          name: "ワイン(甘口)",
           image: require("@/assets/ganymede.jpeg"),
           content: {
             frequency: "8~12",
