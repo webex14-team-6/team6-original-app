@@ -5,7 +5,18 @@
     <router-link to="/shindan">診断</router-link>
   </nav>
   <router-view />
+  <AlcholeCategory />
 </template>
+
+<script>
+import AlcholeCategory from "./components/AlcholeCategory.vue"
+
+export default {
+  components: {
+    AlcholeCategory,
+  },
+}
+</script>
 
 <style>
 #app {
