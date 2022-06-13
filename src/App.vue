@@ -1,22 +1,22 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link>｜
     <router-link to="/shindan">診断</router-link>
   </nav>
   <router-view />
   <AlcholeCategory />
-  <HamburgerMevu />>
+  <HamburgerMevu />
 </template>
 
 <script>
-import AlcholeCategory from "@/components/AlcholeCategory.vue"
 import HamburgerMevu from "./components/HamburgerMevu.vue"
+import AlcholeCategory from "./components/AlcholeCategory.vue"
 
 export default {
   components: {
-    AlcholeCategory,
     HamburgerMevu,
+    AlcholeCategory,
   },
 }
 </script>
