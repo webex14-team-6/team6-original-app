@@ -1,121 +1,129 @@
 <template>
-  <div class="start" v-if="startshow">
-    <h1>診断スタート！</h1>
-    <button class="start-button" v-on:click="startquestion">始める</button>
+  <div class="flex justify-center items-center h-screen" v-if="startshow">
+    <div class="flame">
+      <h1 class="text-6xl py-10">オススメお酒診断</h1>
+      <button class="text-4xl py-10" v-on:click="startquestion">
+        スタート！
+      </button>
+    </div>
   </div>
-  <div class="v" v-if="questionshow">
-    <div class="question-container">
-      <div class="question">{{ questions[questionnamber].text }}</div>
+  <div class="flex justify-center items-center h-screen" v-if="questionshow">
+    <div class="flame">
+      <div class="text-6xl py-10">{{ questions[questionnamber].text }}</div>
       <div class="choice-button">
-        <button class="chooice1" v-on:click="nextquestion1">〇</button>
-        <button class="chooice2" v-on:click="nextquestion2">✕</button>
+        <button class="text-4xl py-10" v-on:click="nextquestion1">〇</button>
+        <button class="text-4xl py-10" v-on:click="nextquestion2">✕</button>
       </div>
     </div>
   </div>
-  <div class="finish" v-if="finishshow">
-    <h1>あなたのオススメは…</h1>
-    <!-- 結果をここに表示 -->
-    <div class="result" v-if="this.string === '高甘柑橘炭酸和'">
-      {{ this.result[0] }}
-    </div>
-    <div class="result" v-if="this.string === '高甘柑橘炭酸洋'">
-      {{ this.result[1] }}
-    </div>
-    <div class="result" v-if="this.string === '高甘柑橘和'">
-      {{ this.result[2] }}
-    </div>
-    <div class="result" v-if="this.string === '高甘柑橘洋'">
-      {{ this.result[3] }}
-    </div>
-    <div class="result" v-if="this.string === '高甘炭酸和'">
-      {{ this.result[4] }}
-    </div>
-    <div class="result" v-if="this.string === '高甘炭酸洋'">
-      {{ this.result[5] }}
-    </div>
-    <div class="result" v-if="this.string === '高甘和'">
-      {{ this.result[6] }}
-    </div>
-    <div class="result" v-if="this.string === '高甘洋'">
-      {{ this.result[7] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛柑橘炭酸和'">
-      {{ this.result[8] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛柑橘炭酸洋'">
-      {{ this.result[9] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛柑橘和'">
-      {{ this.result[10] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛柑橘洋'">
-      {{ this.result[11] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛炭酸和'">
-      {{ this.result[12] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛炭酸洋'">
-      {{ this.result[13] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛和'">
-      {{ this.result[14] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛洋'">
-      {{ this.result[15] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘柑橘炭酸和'">
-      {{ this.result[16] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘柑橘炭酸洋'">
-      {{ this.result[17] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘柑橘和'">
-      {{ this.result[18] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘柑橘洋'">
-      {{ this.result[19] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘炭酸和'">
-      {{ this.result[20] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘炭酸洋'">
-      {{ this.result[21] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘和'">
-      {{ this.result[22] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘洋'">
-      {{ this.result[23] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛柑橘炭酸和'">
-      {{ this.result[24] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛柑橘炭酸洋'">
-      {{ this.result[25] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛柑橘和'">
-      {{ this.result[26] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛柑橘洋'">
-      {{ this.result[27] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛炭酸和'">
-      {{ this.result[28] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛炭酸洋'">
-      {{ this.result[29] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛和'">
-      {{ this.result[30] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛洋'">
-      {{ this.result[31] }}
+  <div class="flex justify-center items-center h-screen" v-if="finishshow">
+    <div class="flame">
+      <h1 class="text-6xl py-10">あなたのオススメは…</h1>
+      <!-- 結果をここに表示 -->
+      <div class="result" v-if="this.string === '高甘柑橘炭酸和'">
+        <PropsCommentary />
+      </div>
+      <div class="result" v-if="this.string === '高甘柑橘炭酸洋'">
+        {{ this.result[1] }}
+      </div>
+      <div class="result" v-if="this.string === '高甘柑橘和'">
+        {{ this.result[2] }}
+      </div>
+      <div class="result" v-if="this.string === '高甘柑橘洋'">
+        {{ this.result[3] }}
+      </div>
+      <div class="result" v-if="this.string === '高甘炭酸和'">
+        {{ this.result[4] }}
+      </div>
+      <div class="result" v-if="this.string === '高甘炭酸洋'">
+        {{ this.result[5] }}
+      </div>
+      <div class="result" v-if="this.string === '高甘和'">
+        {{ this.result[6] }}
+      </div>
+      <div class="result" v-if="this.string === '高甘洋'">
+        {{ this.result[7] }}
+      </div>
+      <div class="result" v-if="this.string === '高辛柑橘炭酸和'">
+        {{ this.result[8] }}
+      </div>
+      <div class="result" v-if="this.string === '高辛柑橘炭酸洋'">
+        {{ this.result[9] }}
+      </div>
+      <div class="result" v-if="this.string === '高辛柑橘和'">
+        {{ this.result[10] }}
+      </div>
+      <div class="result" v-if="this.string === '高辛柑橘洋'">
+        {{ this.result[11] }}
+      </div>
+      <div class="result" v-if="this.string === '高辛炭酸和'">
+        {{ this.result[12] }}
+      </div>
+      <div class="result" v-if="this.string === '高辛炭酸洋'">
+        {{ this.result[13] }}
+      </div>
+      <div class="result" v-if="this.string === '高辛和'">
+        {{ this.result[14] }}
+      </div>
+      <div class="result" v-if="this.string === '高辛洋'">
+        {{ this.result[15] }}
+      </div>
+      <div class="result" v-if="this.string === '低甘柑橘炭酸和'">
+        {{ this.result[16] }}
+      </div>
+      <div class="result" v-if="this.string === '低甘柑橘炭酸洋'">
+        {{ this.result[17] }}
+      </div>
+      <div class="result" v-if="this.string === '低甘柑橘和'">
+        {{ this.result[18] }}
+      </div>
+      <div class="result" v-if="this.string === '低甘柑橘洋'">
+        {{ this.result[19] }}
+      </div>
+      <div class="result" v-if="this.string === '低甘炭酸和'">
+        {{ this.result[20] }}
+      </div>
+      <div class="result" v-if="this.string === '低甘炭酸洋'">
+        {{ this.result[21] }}
+      </div>
+      <div class="result" v-if="this.string === '低甘和'">
+        {{ this.result[22] }}
+      </div>
+      <div class="result" v-if="this.string === '低甘洋'">
+        {{ this.result[23] }}
+      </div>
+      <div class="result" v-if="this.string === '低辛柑橘炭酸和'">
+        {{ this.result[24] }}
+      </div>
+      <div class="result" v-if="this.string === '低辛柑橘炭酸洋'">
+        {{ this.result[25] }}
+      </div>
+      <div class="result" v-if="this.string === '低辛柑橘和'">
+        {{ this.result[26] }}
+      </div>
+      <div class="result" v-if="this.string === '低辛柑橘洋'">
+        {{ this.result[27] }}
+      </div>
+      <div class="result" v-if="this.string === '低辛炭酸和'">
+        {{ this.result[28] }}
+      </div>
+      <div class="result" v-if="this.string === '低辛炭酸洋'">
+        {{ this.result[29] }}
+      </div>
+      <div class="result" v-if="this.string === '低辛和'">
+        {{ this.result[30] }}
+      </div>
+      <div class="result" v-if="this.string === '低辛洋'">
+        {{ this.result[31] }}
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import PropsCommentary from "@/components/PropsCommentary.vue"
 export default {
+  components: { PropsCommentary },
   data() {
     return {
       questionnamber: Number(0),

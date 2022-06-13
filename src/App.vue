@@ -5,17 +5,15 @@
     <router-link to="/shindan">診断</router-link>
   </nav>
   <router-view />
-  <AlcholeCategory />
-  <HamburgerMevu />>
+
+  <HamburgerMevu />
 </template>
 
 <script>
-import AlcholeCategory from "@/components/AlcholeCategory.vue"
 import HamburgerMevu from "./components/HamburgerMevu.vue"
 
 export default {
   components: {
-    AlcholeCategory,
     HamburgerMevu,
   },
 }
@@ -32,6 +30,7 @@ export default {
 
 nav {
   padding: 30px;
+  z-index: 10;
 }
 
 nav a {
