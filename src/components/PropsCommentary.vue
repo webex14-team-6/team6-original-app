@@ -1,16 +1,18 @@
 <template>
   <div class="alchole-content">
-    <img v-bind:src="alchole.image" v-on:click="openModal" />
-    <div>{{ alchole.name }}</div>
+    <!--<img v-bind:src="alchole.image" v-on:click="openModal" />-->
+    <div v-on:click="openModal" class="name">{{ alchole.name }}</div>
   </div>
   <div class="bottomUp">
     <div class="overlay" v-show="showContent">
       <div class="bottomUpcontent">
-        <div>度数:{{ alchole.content.frequency }}℃</div>
-        <div>{{ alchole.content.overview }}</div>
-        <div>{{ alchole.content.taste }}</div>
-        <div>{{ alchole.content.thoughts }}</div>
-        <button v-on:click="closeModal">Close</button>
+        <button class="button" v-on:click="closeModal">×</button>
+        <div class="Name">{{ alchole.name }}</div>
+        <img class="photo" v-bind:src="alchole.image" />
+        <div class="content">・{{ alchole.content.frequency }}%</div>
+        <div class="content">・{{ alchole.content.overview }}</div>
+        <div class="content">・{{ alchole.content.taste }}</div>
+        <div class="content">・{{ alchole.content.thoughts }}</div>
       </div>
     </div>
   </div>
@@ -35,12 +37,21 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .bottomUpcontent {
   z-index: 2;
-  width: 50%;
+  width: 20%;
+  height: 60%;
   padding: 1em;
-  background: rgba(208, 243, 243, 0.939);
+  background: rgba(255, 255, 255);
+  border: solid;
+  border-color: #000000;
+}
+.Name {
+  font-size: 35px;
+}
+.content {
+  text-align: left;
 }
 .overlay {
   z-index: 1;
@@ -53,5 +64,28 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.button {
+  display: flex;
+  justify-content: left;
+  border-color: #000000;
+  font-size: 25px;
+}
+
+.photo {
+  width: 42%;
+  height: 28%;
+}
+
+.alchole-content {
+  text-align: center;
+}
+
+.name {
+  font-size: 40px;
+  display: inline-block;
+  margin: 2mm;
+  padding: 1mm;
+  box-shadow: 0 0 0 2px #000000, 6px 6px 0 0 #fff, 6px 6px 0 2px #000000;
 }
 </style>
