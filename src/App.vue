@@ -1,19 +1,17 @@
 <template>
   <Header />
+  <router-view />
   <HamburgerMevu />
-  <AlcholeCategory />
 </template>
 
 <script>
 import Header from "./components/Header.vue"
 import HamburgerMevu from "./components/HamburgerMevu.vue"
-import AlcholeCategory from "./components/AlcholeCategory.vue"
 
 export default {
   components: {
     Header,
     HamburgerMevu,
-    AlcholeCategory,
   },
 }
 </script>
