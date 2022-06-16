@@ -5,8 +5,8 @@
     <router-link to="/shindan">診断</router-link>
   </nav>
   <router-view />
-  <AlcholeCategory />
   <HamburgerMevu />
+  <AlcholeCategory />
 </template>
 
 <script>
@@ -27,6 +27,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+
   color: #2c3e50;
 }
 
