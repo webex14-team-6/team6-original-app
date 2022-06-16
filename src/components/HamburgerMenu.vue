@@ -4,12 +4,19 @@
     v-on:click="close = !close"
     v-bind:class="{ active: close }"
   >
-    Menu <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
   </div>
+
   <div class="menu" v-bind:class="{ active: close }">
-    <div class="menu__item">TOP</div>
-    <div class="menu__item">診断</div>
-    <div class="menu__item">メニュー</div>
+    <router-link to="/">
+      <div class="menu__item">トップ</div>
+    </router-link>
+    <router-link to="/shindan">
+      <div class="menu__item">オススメお酒診断</div>
+    </router-link>
+    <a href="#kaisetu">
+      <div class="menu__item">お酒解説</div>
+    </a>
   </div>
 </template>
 
@@ -31,43 +38,37 @@ export default {
 <style>
 .openbtn {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #0a0800;
-  cursor: pointer;
-  width: 60px;
-  height: 60px;
-  border-radius: 5px;
+  top: 10px;
+  right: 10px;
+  width: 80px;
+  height: 80px;
   z-index: 5;
-  color: #fff;
+  cursor: pointer;
 }
 
 /*ボタン内側*/
 .openbtn span {
+  width: 70%;
   display: inline-block;
   transition: all 0.4s;
   position: absolute;
-  left: 19px;
-  height: 4px;
-  border-radius: 2px;
+  left: 10px;
+  height: 5px;
   background: #fff;
 }
 
 /*ボタンの３本線のうちの一番上の線
 nth-of-type : 擬似クラス、グループの中で指定された要素の位置に基づいて選択 */
 .openbtn span:nth-of-type(1) {
-  top: 24px;
-  width: 45%;
+  top: 20px;
 }
 
 .openbtn span:nth-of-type(2) {
-  top: 32px;
-  width: 35%;
+  top: 35px;
 }
 
 .openbtn span:nth-of-type(3) {
-  top: 40px;
-  width: 20%;
+  top: 50px;
 }
 
 /*activeクラスが付与されると線が回転して×になる
@@ -89,18 +90,24 @@ nth-of-type : 擬似クラス、グループの中で指定された要素の位
   transform: translateY(-6px) rotate(135deg);
   width: 30%;
 }
+
 .menu {
+  width: 200px;
+  height: 400px;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 1;
-  width: 10%;
-  height: 40%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgb(218, 210, 210);
+  background: black;
+}
+
+.menu a {
+  text-decoration: none;
 }
 
 .menu__item {
@@ -108,7 +115,7 @@ nth-of-type : 擬似クラス、グループの中で指定された要素の位
   height: 5%;
   padding: 20%;
   text-align: center;
-  color: rgb(10, 10, 10);
+  color: white;
   box-sizing: border-box;
 }
 
