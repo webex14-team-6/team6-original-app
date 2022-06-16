@@ -5,8 +5,19 @@
         <img src="../assets/oshieteosake.png" alt="oshiete osake" />
       </h1>
     </div>
+    <HamburgerMenu />
   </div>
 </template>
+
+<script>
+import HamburgerMenu from "../components/HamburgerMenu.vue"
+
+export default {
+  components: {
+    HamburgerMenu,
+  },
+}
+</script>
 
 <style scoped>
 .header {
