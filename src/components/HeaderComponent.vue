@@ -2,7 +2,7 @@
   <div class="header">
     <div class="beer-img">
       <h1>
-        <img src="../assets/logo.png" alt="oshiete osake" />
+        <img src="../assets/oshieteosake.png" alt="oshiete osake" />
       </h1>
     </div>
   </div>
