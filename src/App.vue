@@ -1,22 +1,15 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>｜
-    <router-link to="/shindan">診断</router-link>
-  </nav>
+  <Header />
   <router-view />
-  <HamburgerMevu />
-  <AlcholeCategory />
+
 </template>
 
 <script>
-import HamburgerMevu from "./components/HamburgerMevu.vue"
-import AlcholeCategory from "./components/AlcholeCategory.vue"
+import Header from "./components/HeaderComponent.vue"
 
 export default {
   components: {
-    HamburgerMevu,
-    AlcholeCategory,
+    Header,
   },
 }
 </script>
@@ -28,19 +21,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
