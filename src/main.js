@@ -2,5 +2,6 @@ import { createApp } from "vue"
 import App from "./App.vue"
 import "./firebase.js"
 import router from "./router"
+import { MotionPlugin } from "@vueuse/motion"
 
-createApp(App).use(router).mount("#app")
+createApp(App).use(router).use(MotionPlugin).mount("#app")

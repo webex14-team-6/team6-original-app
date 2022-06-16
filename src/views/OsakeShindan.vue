@@ -16,7 +16,8 @@
     <h1>あなたのオススメは…</h1>
     <!-- 結果をここに表示 -->
     <div class="result" v-if="this.string === '高甘柑橘炭酸和'">
-      {{ this.result[0] }}
+      <!--jsonファイルの結果を表示-->
+      {{ 高甘柑橘炭酸和.name }}
     </div>
     <div class="result" v-if="this.string === '高甘柑橘炭酸洋'">
       {{ this.result[1] }}
@@ -115,9 +116,16 @@
 </template>
 
 <script>
+import DataJson from "@/assets/data.json"
+import axios from "axios"
+
 export default {
+  components: {
+    //dDataJson,
+  },
   data() {
     return {
+      DataJson: DataJson,
       questionnamber: Number(0),
       string: "",
       // スタート画面表示
@@ -135,8 +143,20 @@ export default {
         { text: "和か洋かだったら和だ" },
       ],
       result: [
-        // 結果内容をここの配列に入れる
-        "高甘柑橘炭酸和の結果",
+        /*結果内容をここの配列に入れる*/
+        {
+          name: "ハイボール（メーカーズマーク）",
+          image: require("@/assets/wine.png"),
+          content: {
+            frequency: "8~12",
+            overview:
+              "ブドウの果汁を発酵させたお酒。その中でも特に甘口のワイン（赤白は関係無い）。",
+            taste:
+              "ワインはとても複雑な味で奥が深く、ぶどうジュースとは全然違う。甘口と言ってもワインならではの渋みや酸味はあるが、フルーティーで華やかな香りを楽しめる。比較的飲みやすい。",
+            thoughts:
+              "ブドウの果汁を発酵させたお酒。その中でも特に甘口のワイン（赤白は関係無い)。",
+          },
+        },
         "高甘柑橘炭酸洋の結果",
         "高甘柑橘和",
         "高甘柑橘洋",
@@ -169,9 +189,22 @@ export default {
         "低辛和",
         "低辛洋",
       ],
+      //追加しました
+      results: [],
     }
   },
   methods: {
+    //axiosを使ってJSONファイルを読み込もうとしましたが、
+    //うまくいきませんでした。
+    async getalchole() {
+      await axios.get(DataJson).then((x) => {
+        this.results = x.data
+      })
+    },
+    //追加しました
+    mounted() {
+      this.getalchole()
+    },
     // スタートボタンを押した時の動作
     startquestion: function () {
       this.startshow = false
