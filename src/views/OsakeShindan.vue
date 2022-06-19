@@ -1,130 +1,157 @@
 <template>
-  <div class="start" v-if="startshow">
-    <h1>診断スタート！</h1>
-    <button class="start-button" v-on:click="startquestion">始める</button>
-  </div>
-  <div class="v" v-if="questionshow">
-    <div class="question-container">
-      <div class="question">{{ questions[questionnamber].text }}</div>
-      <div class="choice-button">
-        <button class="chooice1" v-on:click="nextquestion1">〇</button>
-        <button class="chooice2" v-on:click="nextquestion2">✕</button>
+  <div class="home-background">
+    <div class="v-if-container" v-if="startshow">
+      <div class="flame">
+        <h1 class="animation1">オススメお酒診断</h1>
+        <div class="startbutoon-container">
+          <button class="shindan-button" v-on:click="startquestion">
+            スタート！
+          </button>
+        </div>
+        <img src="@/assets/beericon.png" width="100px" />
       </div>
+
+      <router-link to="/">
+        <button class="top-button">TOPへ戻る</button></router-link
+      >
     </div>
-  </div>
-  <div class="finish" v-if="finishshow">
-    <h1>あなたのオススメは…</h1>
-    <!-- 結果をここに表示 -->
-    <div class="result" v-if="this.string === '高甘柑橘炭酸和'">
-      <!--jsonファイルの結果を表示-->
-      {{ 高甘柑橘炭酸和.name }}
+
+    <div class="v-if-container" v-if="questionshow">
+      <div class="flame">
+        <div class="text-4xl py-10" v-bind:class="{ animation2: isAnime }">
+          {{ questions[questionnamber].text }}
+        </div>
+        <div class="flex justify-center space-x-12">
+          <button class="marubatu-button" v-on:click="nextquestion1">〇</button>
+          <button class="marubatu-button" v-on:click="nextquestion2">✕</button>
+        </div>
+      </div>
+      <router-link to="/">
+        <button class="top-button">TOPへ戻る</button></router-link
+      >
     </div>
-    <div class="result" v-if="this.string === '高甘柑橘炭酸洋'">
-      {{ this.result[1] }}
-    </div>
-    <div class="result" v-if="this.string === '高甘柑橘和'">
-      {{ this.result[2] }}
-    </div>
-    <div class="result" v-if="this.string === '高甘柑橘洋'">
-      {{ this.result[3] }}
-    </div>
-    <div class="result" v-if="this.string === '高甘炭酸和'">
-      {{ this.result[4] }}
-    </div>
-    <div class="result" v-if="this.string === '高甘炭酸洋'">
-      {{ this.result[5] }}
-    </div>
-    <div class="result" v-if="this.string === '高甘和'">
-      {{ this.result[6] }}
-    </div>
-    <div class="result" v-if="this.string === '高甘洋'">
-      {{ this.result[7] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛柑橘炭酸和'">
-      {{ this.result[8] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛柑橘炭酸洋'">
-      {{ this.result[9] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛柑橘和'">
-      {{ this.result[10] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛柑橘洋'">
-      {{ this.result[11] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛炭酸和'">
-      {{ this.result[12] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛炭酸洋'">
-      {{ this.result[13] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛和'">
-      {{ this.result[14] }}
-    </div>
-    <div class="result" v-if="this.string === '高辛洋'">
-      {{ this.result[15] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘柑橘炭酸和'">
-      {{ this.result[16] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘柑橘炭酸洋'">
-      {{ this.result[17] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘柑橘和'">
-      {{ this.result[18] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘柑橘洋'">
-      {{ this.result[19] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘炭酸和'">
-      {{ this.result[20] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘炭酸洋'">
-      {{ this.result[21] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘和'">
-      {{ this.result[22] }}
-    </div>
-    <div class="result" v-if="this.string === '低甘洋'">
-      {{ this.result[23] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛柑橘炭酸和'">
-      {{ this.result[24] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛柑橘炭酸洋'">
-      {{ this.result[25] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛柑橘和'">
-      {{ this.result[26] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛柑橘洋'">
-      {{ this.result[27] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛炭酸和'">
-      {{ this.result[28] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛炭酸洋'">
-      {{ this.result[29] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛和'">
-      {{ this.result[30] }}
-    </div>
-    <div class="result" v-if="this.string === '低辛洋'">
-      {{ this.result[31] }}
+    <div class="v-if-container" v-if="finishshow">
+      <div class="flame">
+        <h1 class="text-5xl py-10">あなたのオススメは…</h1>
+
+        <!-- 結果をここに表示 -->
+        <div class="result" v-if="this.string === '高甘柑橘炭酸和'">
+          {{ this.sake }}
+        </div>
+        <div class="result" v-if="this.string === '高甘柑橘炭酸洋'">
+          {{ this.result[1] }}
+        </div>
+        <div class="result" v-if="this.string === '高甘柑橘和'">
+          {{ this.result[2] }}
+        </div>
+        <div class="result" v-if="this.string === '高甘柑橘洋'">
+          {{ this.result[3] }}
+        </div>
+        <div class="result" v-if="this.string === '高甘炭酸和'">
+          {{ this.result[4] }}
+        </div>
+        <div class="result" v-if="this.string === '高甘炭酸洋'">
+          {{ this.result[5] }}
+        </div>
+        <div class="result" v-if="this.string === '高甘和'">
+          {{ this.result[6] }}
+        </div>
+        <div class="result" v-if="this.string === '高甘洋'">
+          {{ this.result[7] }}
+        </div>
+        <div class="result" v-if="this.string === '高辛柑橘炭酸和'">
+          {{ this.result[8] }}
+        </div>
+        <div class="result" v-if="this.string === '高辛柑橘炭酸洋'">
+          {{ this.result[9] }}
+        </div>
+        <div class="result" v-if="this.string === '高辛柑橘和'">
+          {{ this.result[10] }}
+        </div>
+        <div class="result" v-if="this.string === '高辛柑橘洋'">
+          {{ this.result[11] }}
+        </div>
+        <div class="result" v-if="this.string === '高辛炭酸和'">
+          {{ this.result[12] }}
+        </div>
+        <div class="result" v-if="this.string === '高辛炭酸洋'">
+          {{ this.result[13] }}
+        </div>
+        <div class="result" v-if="this.string === '高辛和'">
+          {{ this.result[14] }}
+        </div>
+        <div class="result" v-if="this.string === '高辛洋'">
+          {{ this.result[15] }}
+        </div>
+        <div class="result" v-if="this.string === '低甘柑橘炭酸和'">
+          {{ this.result[16] }}
+        </div>
+        <div class="result" v-if="this.string === '低甘柑橘炭酸洋'">
+          {{ this.result[17] }}
+        </div>
+        <div class="result" v-if="this.string === '低甘柑橘和'">
+          {{ this.result[18] }}
+        </div>
+        <div class="result" v-if="this.string === '低甘柑橘洋'">
+          {{ this.result[19] }}
+        </div>
+        <div class="result" v-if="this.string === '低甘炭酸和'">
+          {{ this.result[20] }}
+        </div>
+        <div class="result" v-if="this.string === '低甘炭酸洋'">
+          {{ this.result[21] }}
+        </div>
+        <div class="result" v-if="this.string === '低甘和'">
+          {{ this.result[22] }}
+        </div>
+        <div class="result" v-if="this.string === '低甘洋'">
+          {{ this.result[23] }}
+        </div>
+        <div class="result" v-if="this.string === '低辛柑橘炭酸和'">
+          {{ this.result[24] }}
+        </div>
+        <div class="result" v-if="this.string === '低辛柑橘炭酸洋'">
+          {{ this.result[25] }}
+        </div>
+        <div class="result" v-if="this.string === '低辛柑橘和'">
+          {{ this.result[26] }}
+        </div>
+        <div class="result" v-if="this.string === '低辛柑橘洋'">
+          {{ this.result[27] }}
+        </div>
+        <div class="result" v-if="this.string === '低辛炭酸和'">
+          {{ this.result[28] }}
+        </div>
+        <div class="result" v-if="this.string === '低辛炭酸洋'">
+          {{ this.result[29] }}
+        </div>
+        <div class="result" v-if="this.string === '低辛和'">
+          {{ this.result[30] }}
+        </div>
+        <div class="result" v-if="this.string === '低辛洋'">
+          {{ this.result[31] }}
+        </div>
+        <div flex justify-center>
+          <button class="retry-button" v-on:click="retry">もう一度！</button>
+        </div>
+      </div>
+      <router-link to="/">
+        <button class="top-button">TOPへ戻る</button></router-link
+      >
     </div>
   </div>
 </template>
 
 <script>
-import DataJson from "@/assets/data.json"
-import axios from "axios"
+import users from "../assets/data.json"
+// import axios from "axios"
 export default {
-  components: {
-    //dDataJson,
-  },
+  components: {},
   data() {
     return {
-      DataJson: DataJson,
+      users: users,
+      sake: null,
+      isAnime: false,
       questionnamber: Number(0),
       string: "",
       // スタート画面表示
@@ -192,25 +219,40 @@ export default {
       results: [],
     }
   },
+  created() {
+    this.sake = JSON.parse(users)
+  },
   methods: {
-    //axiosを使ってJSONファイルを読み込もうとしましたが、
-    //うまくいきませんでした。
-    async getalchole() {
-      await axios.get(DataJson).then((x) => {
-        this.results = x.data
-      })
-    },
-    //追加しました
-    mounted() {
-      this.getalchole()
-    },
+    // //axiosを使ってJSONファイルを読み込もうとしましたが、
+    // //うまくいきませんでした。
+    // async getalchole() {
+    //   await axios.get().then((x) => {
+    //     this.results = x.data
+    //   })
+    // },
+    // //追加しました
+    // mounted() {
+    //   this.getalchole()
+    // },
+
     // スタートボタンを押した時の動作
     startquestion: function () {
       this.startshow = false
       this.questionshow = true
+      // アニメーションのオンオフ
+
+      this.isAnime = true
+      setTimeout(() => {
+        this.isAnime = false
+      }, 501)
     },
     // 〇を押したときの動作
     nextquestion1: function () {
+      // アニメーションのオンオフ
+      this.isAnime = true
+      setTimeout(() => {
+        this.isAnime = false
+      }, 501)
       // 1問目
       if (this.questionnamber === 0) {
         this.string += "高"
@@ -242,6 +284,11 @@ export default {
     },
     // ✕を押したときの動作
     nextquestion2: function () {
+      // アニメーションのオンオフ
+      this.isAnime = true
+      setTimeout(() => {
+        this.isAnime = false
+      }, 501)
       // 1問目
       if (this.questionnamber === 0) {
         this.string += "低"
@@ -271,8 +318,108 @@ export default {
         this.finishshow = true
       }
     },
+    retry: function () {
+      this.finishshow = false
+      this.questionnamber = 0
+      this.startshow = true
+    },
   },
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.home-background {
+  width: 100%;
+  height: auto;
+  background-attachment: fixed;
+  background-image: url(../assets/backgroundtile.jpg);
+  background-size: cover;
+}
+.shindan-button {
+  width: 250px;
+  height: 80px;
+  background-color: white;
+  border: solid black;
+  box-shadow: 5px 5px black;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.shindan-button:hover {
+  transform: scale(1.05);
+  background-color: blue;
+  color: white;
+  border: solid white;
+  box-shadow: 5px 5px lime;
+}
+.marubatu-button {
+  width: 100px;
+  height: 80px;
+  background-color: white;
+  border: solid black;
+  box-shadow: 5px 5px black;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.marubatu-button:hover {
+  transform: scale(1.05);
+  background-color: blue;
+  color: white;
+  border: solid white;
+  box-shadow: 5px 5px lime;
+}
+.retry-button {
+  width: 200px;
+  height: 80px;
+  background-color: white;
+  border: solid black;
+  box-shadow: 5px 5px black;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.retry-button:hover {
+  transform: scale(1.05);
+  background-color: blue;
+  color: white;
+  border: solid white;
+  box-shadow: 5px 5px lime;
+}
+/* スタート画面のアニメーション */
+@keyframes start-apper {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.animation1 {
+  font-size: 3.75rem /* 60px */;
+  line-height: 1;
+  padding-top: 2.5rem /* 40px */;
+  padding-bottom: 2.5rem /* 40px */;
+  animation: start-apper 1s ease-out 0s 1 forwards;
+}
+/* 問題が出るときのアニメーション */
+@keyframes question-apper {
+  0% {
+    transform: translatey(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translatey(0px);
+    opacity: 1;
+  }
+}
+.animation2 {
+  animation: question-apper 0.2s 0s 1 forwards;
+}
+.a {
+  font-size: 15px;
+  font-family: 游ゴシック;
+  font-weight: bold;
+  display: inline-block;
+  margin: 2mm;
+  padding: 1mm;
+  box-shadow: 0 0 0 2px #000000, 6px 6px 0 0 #fff, 6px 6px 0 2px #000000;
+}
+</style>
