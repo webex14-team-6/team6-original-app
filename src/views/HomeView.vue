@@ -93,8 +93,8 @@ export default {
   height: 400px;
 
   background-color: white;
-  border: solid black;
-  box-shadow: 5px 5px black;
+  border: solid 2px black;
+  box-shadow: 6px 6px 0 -1px white, 6px 6px 0 1px black;
 
   writing-mode: vertical-rl;
   text-align: center;
@@ -152,8 +152,8 @@ h2 {
   width: 250px;
   height: 80px;
   background-color: white;
-  border: solid black;
-  box-shadow: 5px 5px black;
+  border: solid 2px black;
+  box-shadow: 6px 6px 0 -1px white, 6px 6px 0 1px black;
 
   font-size: 1.5em;
   font-weight: bold;
@@ -163,7 +163,7 @@ h2 {
   transform: scale(1.05);
   background-color: blue;
   color: white;
-  border: solid white;
+  border: solid 2px white;
   box-shadow: 5px 5px lime;
 }
 
@@ -188,7 +188,6 @@ h2 {
   height: 280px;
   margin: auto;
   margin-top: -30px;
-  margin-bottom: 100px;
   background-color: white;
   border: solid black;
 
@@ -243,8 +242,8 @@ footer img {
   height: 50px;
   margin: 20px;
   background-color: black;
-  border: solid white;
-  box-shadow: 5px 5px white;
+  border: solid 2px white;
+  box-shadow: 6px 6px 0 -1px black, 6px 6px 0 1px white;
 
   color: white;
   font-size: 1em;
@@ -253,7 +252,119 @@ footer img {
 .footer-nav button:hover {
   background-color: white;
   color: black;
-  border: solid black;
+  border: solid 2px black;
   box-shadow: 5px 5px lime;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 500px) {
+  .mainvisual {
+    width: 100%;
+    height: 500px;
+    flex-direction: column;
+  }
+
+  .main-text {
+    width: 60px;
+    height: 300px;
+    margin-top: 50px;
+    font-size: 1.1em;
+    line-height: 60px;
+  }
+
+  .bluegreenlogo {
+    width: 280px;
+    height: 140px;
+    margin-top: 0;
+  }
+
+  .shindan-container {
+    width: 300px;
+    height: 480px;
+    margin-top: -20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  .container-text {
+    font-size: 1em;
+    margin-block-start: 20px;
+    margin-block-end: 30px;
+  }
+
+  .shindan-button {
+    width: 160px;
+    height: 60px;
+    font-size: 1.2em;
+  }
+
+  .shindan-container img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .between img {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* 解説 */
+  #kaisetu {
+    padding: 100px 0 50px;
+  }
+
+  .kaisetu-container {
+    width: 300px;
+    height: 400px;
+    margin-top: -20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .kaisetu-container img {
+    width: 150px;
+    height: 150px;
+    margin-top: 50px;
+  }
+
+  .bottom-space {
+    width: 90%;
+    height: 300px;
+    margin-left: 5%;
+    margin-top: 100px;
+    text-align: left;
+  }
+
+  .bottom-space img {
+    width: 280px;
+    height: 140px;
+  }
+
+  /* フッター */
+  footer {
+    height: 320px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .footer-logo {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+  }
+
+  footer img {
+    width: 140px;
+    height: 25px;
+  }
+
+  .footer-nav {
+    margin-bottom: 20px;
+  }
 }
 </style>
