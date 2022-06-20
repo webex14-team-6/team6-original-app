@@ -1,7 +1,6 @@
 <template>
   <Header />
   <router-view />
-
 </template>
 
 <script>
@@ -20,6 +19,5 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-
 }
 </style>
