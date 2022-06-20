@@ -5,7 +5,6 @@
 
 <script>
 import Header from "./components/HeaderComponent.vue"
-
 export default {
   components: {
     Header,
