@@ -1,74 +1,72 @@
 <template>
-  <div class="contentMenu1">
-    <img src="@/assets/back.png" class="back" />
-    <div class="contentMenu2">
-      <div class="right">
-        <img src="@/assets/namebeer.png" class="title" />
-        <PropsCommentary
-          v-for="(alchole, index) in beer"
-          v-bind:key="index"
-          v-bind:alchole="alchole"
-        />
-        <div class="hr"></div>
-        <img src="@/assets/namehighball.png" class="title" />
-        <PropsCommentary
-          v-for="(alchole, index) in highball"
-          v-bind:key="index"
-          v-bind:alchole="alchole"
-        />
-        <div class="hr"></div>
-        <img src="@/assets/namesour.png" class="title" />
-        <PropsCommentary
-          v-for="(alchole, index) in sour"
-          v-bind:key="index"
-          v-bind:alchole="alchole"
-        />
-        <div class="hr"></div>
-        <img src="@/assets/namefruit.png" class="title" />
-        <PropsCommentary
-          v-for="(alchole, index) in fruitwine"
-          v-bind:key="index"
-          v-bind:alchole="alchole"
-        />
-        <div class="hr"></div>
-        <img src="@/assets/namewine.png" class="title" />
-        <PropsCommentary
-          v-for="(alchole, index) in wine"
-          v-bind:key="index"
-          v-bind:alchole="alchole"
-        />
-      </div>
+  <div class="alcohol-category">
+    <div class="left">
+      <img src="@/assets/namebeer.png" class="title" />
+      <PropsCommentary
+        v-for="(alchole, index) in beer"
+        v-bind:key="index"
+        v-bind:alchole="alchole"
+      />
+      <div class="line-left"></div>
+      <img src="@/assets/namehighball.png" class="title" />
+      <PropsCommentary
+        v-for="(alchole, index) in highball"
+        v-bind:key="index"
+        v-bind:alchole="alchole"
+      />
+      <div class="line-left"></div>
+      <img src="@/assets/namesour.png" class="title" />
+      <PropsCommentary
+        v-for="(alchole, index) in sour"
+        v-bind:key="index"
+        v-bind:alchole="alchole"
+      />
+      <div class="line-left"></div>
+      <img src="@/assets/namefruit.png" class="title" />
+      <PropsCommentary
+        v-for="(alchole, index) in fruitwine"
+        v-bind:key="index"
+        v-bind:alchole="alchole"
+      />
+      <div class="line-left"></div>
+      <img src="@/assets/namewine.png" class="title" />
+      <PropsCommentary
+        v-for="(alchole, index) in wine"
+        v-bind:key="index"
+        v-bind:alchole="alchole"
+      />
+    </div>
 
-      <div class="line"></div>
-      <div class="left">
-        <img src="@/assets/namecocktails.png" class="title" />
-        <PropsCommentary
-          v-for="(alchole, index) in cocktails"
-          v-bind:key="index"
-          v-bind:alchole="alchole"
-        />
-        <div class="hr1"></div>
-        <img src="@/assets/namewhisky.png" class="title" />
-        <PropsCommentary
-          v-for="(alchole, index) in whisky"
-          v-bind:key="index"
-          v-bind:alchole="alchole"
-        />
-        <div class="hr1"></div>
-        <img src="@/assets/namesake.png" class="title" />
-        <PropsCommentary
-          v-for="(alchole, index) in sake"
-          v-bind:key="index"
-          v-bind:alchole="alchole"
-        />
-        <div class="hr1"></div>
-        <img src="@/assets/nameshochu.png" class="title" />
-        <PropsCommentary
-          v-for="(alchole, index) in shochu"
-          v-bind:key="index"
-          v-bind:alchole="alchole"
-        />
-      </div>
+    <div class="line"></div>
+
+    <div class="right">
+      <img src="@/assets/namecocktails.png" class="title" />
+      <PropsCommentary
+        v-for="(alchole, index) in cocktails"
+        v-bind:key="index"
+        v-bind:alchole="alchole"
+      />
+      <div class="line-right"></div>
+      <img src="@/assets/namewhisky.png" class="title" />
+      <PropsCommentary
+        v-for="(alchole, index) in whisky"
+        v-bind:key="index"
+        v-bind:alchole="alchole"
+      />
+      <div class="line-right"></div>
+      <img src="@/assets/namesake.png" class="title" />
+      <PropsCommentary
+        v-for="(alchole, index) in sake"
+        v-bind:key="index"
+        v-bind:alchole="alchole"
+      />
+      <div class="line-right"></div>
+      <img src="@/assets/nameshochu.png" class="title" />
+      <PropsCommentary
+        v-for="(alchole, index) in shochu"
+        v-bind:key="index"
+        v-bind:alchole="alchole"
+      />
     </div>
   </div>
 </template>
@@ -479,68 +477,48 @@ export default {
 </script>
 
 <style scoped>
-.right {
-  position: relative;
-  top: 30px;
-  left: 0%;
-  float: left;
-}
-.left {
-  position: relative;
-  top: -1064px;
-  right: -56%;
-  float: left;
+.alcohol-category {
+  width: 900px;
+  height: 1470px;
+  margin: auto;
+  padding: 50px 100px;
+  background-image: url(../assets/back.png);
+  background-size: cover;
+
+  display: flex;
+  justify-content: space-between;
 }
 
-.Menu {
-  font-size: 60px;
+.left {
+  width: 50%;
 }
+
+.line-left {
+  width: 350px;
+  height: 2px;
+  margin: 10px 0;
+  background-color: black;
+}
+
 .line {
-  width: 5px;
-  height: 1100px;
-  background-color: #000000;
-  position: relative;
-  right: -54%;
-  top: 30px;
+  width: 2px;
+  height: 1350px;
+  background-color: black;
 }
-.hr {
-  border: none;
-  border-bottom: 5px solid rgb(0, 0, 0);
-  padding: 5px;
-  width: 54%;
-  position: relative;
-  right: 3%;
-}
-.hr1 {
-  border: none;
-  border-bottom: 5px solid rgb(0, 0, 0);
-  padding: 5px;
+
+.right {
   width: 40%;
 }
-.contentMenu1 {
-  position: relative;
-  height: 750px;
-  width: 680px;
-  top: 15%;
-  left: 27%;
-  z-index: 1;
+
+.line-right {
+  width: 300px;
+  height: 2px;
+  margin: 10px 0;
+  background-color: black;
 }
 
-.contentMenu2 {
-  z-index: 2;
-  position: relative;
-  top: -160%;
-  left: 13%;
-}
 .title {
-  position: relative;
-  right: 38%;
-  width: 25%;
-  height: 65%;
-}
-.back {
-  width: 120%;
-  height: 162%;
-  z-index: 0;
+  width: 300px;
+  height: 100px;
 }
 </style>

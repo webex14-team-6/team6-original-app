@@ -11,10 +11,12 @@
         <button class="button" v-on:click="closeModal">×</button>
         <div class="Name">{{ alchole.name }}</div>
         <img class="photo" v-bind:src="alchole.image" v-motion-pop-visible />
-        <div class="content">・{{ alchole.content.frequency }}%</div>
-        <div class="content">・{{ alchole.content.overview }}</div>
-        <div class="content">・{{ alchole.content.taste }}</div>
-        <div class="content">・{{ alchole.content.thoughts }}</div>
+        <ul>
+          <li class="content">{{ alchole.content.frequency }}%</li>
+          <li class="content">{{ alchole.content.overview }}</li>
+          <li class="content">{{ alchole.content.taste }}</li>
+          <li class="content">{{ alchole.content.thoughts }}</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -42,17 +44,17 @@ export default {
 <style scoped>
 .bottomUpcontent {
   z-index: 2;
-  width: 30%;
-  height: 60%;
+  width: 300px;
+  height: 550px;
   padding: 1em;
   background: rgba(255, 255, 255);
-  border: solid;
-  border-color: #000000;
+  border: solid black;
 }
 .Name {
-  font-size: 35px;
+  font-size: 24px;
 }
 .content {
+  width: 260px;
   text-align: left;
 }
 .overlay {
@@ -68,15 +70,19 @@ export default {
   justify-content: center;
 }
 .button {
-  position: relative;
-  right: -45%;
-  border-color: #000000;
+  width: 30px;
+  height: 30px;
+  margin-left: 230px;
+  border: solid black;
+  line-height: 30px;
   font-size: 25px;
 }
 
 .photo {
-  width: 42%;
-  height: 28%;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 .alchole-content {
@@ -85,7 +91,6 @@ export default {
 
 .name {
   font-size: 15px;
-  font-family: 游ゴシック;
   font-weight: bold;
   display: inline-block;
   margin: 2mm;
