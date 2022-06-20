@@ -26,6 +26,7 @@ export default {
   position: fixed;
   background-image: url(../assets/concrete.jpg);
   background-size: cover;
+  z-index: 50;
 }
 
 .beer-img {
@@ -45,5 +46,23 @@ h1 img {
   height: 40px;
   margin-left: -30px;
   margin-top: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    height: 80px;
+  }
+
+  .beer-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  h1 img {
+    width: 150px;
+    height: 30px;
+    margin-left: -25px;
+    margin-top: 20px;
+  }
 }
 </style>
