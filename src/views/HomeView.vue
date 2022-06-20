@@ -93,8 +93,8 @@ export default {
   height: 400px;
 
   background-color: white;
-  border: solid black;
-  box-shadow: 5px 5px black;
+  border: solid 2px black;
+  box-shadow: 6px 6px 0 -1px white, 6px 6px 0 1px black;
 
   writing-mode: vertical-rl;
   text-align: center;
@@ -152,8 +152,8 @@ h2 {
   width: 250px;
   height: 80px;
   background-color: white;
-  border: solid black;
-  box-shadow: 5px 5px black;
+  border: solid 2px black;
+  box-shadow: 6px 6px 0 -1px white, 6px 6px 0 1px black;
 
   font-size: 1.5em;
   font-weight: bold;
@@ -163,7 +163,7 @@ h2 {
   transform: scale(1.05);
   background-color: blue;
   color: white;
-  border: solid white;
+  border: solid 2px white;
   box-shadow: 5px 5px lime;
 }
 
@@ -188,7 +188,6 @@ h2 {
   height: 280px;
   margin: auto;
   margin-top: -30px;
-  margin-bottom: 100px;
   background-color: white;
   border: solid black;
 
@@ -243,8 +242,8 @@ footer img {
   height: 50px;
   margin: 20px;
   background-color: black;
-  border: solid white;
-  box-shadow: 5px 5px white;
+  border: solid 2px white;
+  box-shadow: 6px 6px 0 -1px black, 6px 6px 0 1px white;
 
   color: white;
   font-size: 1em;
@@ -253,7 +252,7 @@ footer img {
 .footer-nav button:hover {
   background-color: white;
   color: black;
-  border: solid black;
+  border: solid 2px black;
   box-shadow: 5px 5px lime;
 }
 </style>
