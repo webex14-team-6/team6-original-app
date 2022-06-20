@@ -1,7 +1,7 @@
 {
   "高甘柑橘炭酸和": {
     "name": "ハイボール（メーカーズマーク）",
-    "image": "@/assets/wine .png",
+    "image": "@/assets/wine.png",
     "content": {
       "frequency": "8~12",
       "overview": "ブドウの果汁を発酵させたお酒。その中でも特に甘口のワイン（赤白は関係無い）。",
@@ -11,7 +11,7 @@
   },
   "高甘柑橘炭酸": {
     "name": "ハイボール（メーカーズマーク）",
-    "image": "@/assets/wine .png",
+    "image": "@/assets/wine.png",
     "content": {
       "frequency": "8~12",
       "overview": "ブドウの果汁を発酵させたお酒。その中でも特に甘口のワイン（赤白は関係無い）。",

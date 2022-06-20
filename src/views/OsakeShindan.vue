@@ -31,30 +31,63 @@
       >
     </div>
     <div class="v-if-container" v-if="finishshow">
-      <div class="flame">
+      <div class="flame2">
         <h1 class="text-5xl py-10">あなたのオススメは…</h1>
 
         <!-- 結果をここに表示 -->
-        <div class="result" v-if="this.string === '高甘柑橘炭酸和'">
-          {{ this.sake }}
+        <div
+          class="flex justify-around"
+          v-if="this.string === '高甘柑橘炭酸和'"
+        >
+          <div class="result">
+            <div class="result-name">チャミスル</div>
+            <div class="result-foto">
+              <div>
+                <img src="@/assets/chami.png" width="200" height="200" />
+              </div>
+            </div>
+          </div>
+          <div class="result">
+            <div class="result-name">チャミスル</div>
+            <div class="result-foto">
+              <div>
+                <img src="@/assets/chami.png" width="200" height="200" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '高甘柑橘炭酸洋'">
-          {{ this.result[1] }}
+        <div
+          class="flex justify-around"
+          v-if="this.string === '高甘柑橘炭酸洋'"
+        >
+          <div class="result">
+            <div class="result-name">サングリア</div>
+            <div class="result-foto">
+              <img src="@/assets/sangria.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
         <div class="result" v-if="this.string === '高甘柑橘和'">
-          {{ this.result[2] }}
+          <div class="result-name">チャミスル</div>
+          <div class="result-foto"><img src="@/assets/chami.png" /></div>
         </div>
         <div class="result" v-if="this.string === '高甘柑橘洋'">
-          {{ this.result[3] }}
+          <div class="result-name">チャミスル</div>
+          <div class="result-foto"><img src="@/assets/chami.png" /></div>
+          <div class="result-name">サングリア</div>
+          <div class="result-foto"><img src="@/assets/sangria.png" /></div>
         </div>
         <div class="result" v-if="this.string === '高甘炭酸和'">
-          {{ this.result[4] }}
+          <div class="result-name">ハイボール</div>
+          <div class="result-foto"><img src="@/assets/highball1.png" /></div>
         </div>
         <div class="result" v-if="this.string === '高甘炭酸洋'">
-          {{ this.result[5] }}
+          <div class="result-name">ハイボール</div>
+          <div class="result-foto"><img src="@/assets/highball1.png" /></div>
         </div>
         <div class="result" v-if="this.string === '高甘和'">
-          {{ this.result[6] }}
+          <div class="result-name">日本酒</div>
+          <div class="result-foto"><img src="@/assets/highball1.png" /></div>
         </div>
         <div class="result" v-if="this.string === '高甘洋'">
           {{ this.result[7] }}
@@ -165,24 +198,11 @@ export default {
         { text: "度数高いお酒が飲みたい！" },
         { text: "甘口派だ" },
         { text: "柑橘類が好きだ" },
-        { text: "炭酸が飲めない" },
+        { text: "炭酸が飲みたい" },
         { text: "和か洋かだったら和だ" },
       ],
       result: [
         /*結果内容をここの配列に入れる*/
-        {
-          name: "ハイボール（メーカーズマーク）",
-          image: require("@/assets/wine.png"),
-          content: {
-            frequency: "8~12",
-            overview:
-              "ブドウの果汁を発酵させたお酒。その中でも特に甘口のワイン（赤白は関係無い）。",
-            taste:
-              "ワインはとても複雑な味で奥が深く、ぶどうジュースとは全然違う。甘口と言ってもワインならではの渋みや酸味はあるが、フルーティーで華やかな香りを楽しめる。比較的飲みやすい。",
-            thoughts:
-              "ブドウの果汁を発酵させたお酒。その中でも特に甘口のワイン（赤白は関係無い)。",
-          },
-        },
         "高甘柑橘炭酸洋の結果",
         "高甘柑橘和",
         "高甘柑橘洋",
@@ -220,7 +240,7 @@ export default {
     }
   },
   created() {
-    this.sake = JSON.parse(users)
+    this.sake = JSON.parse(JSON.stringify(users))
   },
   methods: {
     // //axiosを使ってJSONファイルを読み込もうとしましたが、
@@ -321,6 +341,7 @@ export default {
     retry: function () {
       this.finishshow = false
       this.questionnamber = 0
+      this.string = ""
       this.startshow = true
     },
   },
@@ -413,13 +434,18 @@ export default {
 .animation2 {
   animation: question-apper 0.2s 0s 1 forwards;
 }
-.a {
+.result {
+  width: 300px;
   font-size: 15px;
   font-family: 游ゴシック;
   font-weight: bold;
   display: inline-block;
-  margin: 2mm;
+  margin: 2rem;
   padding: 1mm;
   box-shadow: 0 0 0 2px #000000, 6px 6px 0 0 #fff, 6px 6px 0 2px #000000;
+}
+.result-foto {
+  display: flex;
+  justify-content: center;
 }
 </style>
