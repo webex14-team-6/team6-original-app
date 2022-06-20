@@ -26,6 +26,7 @@ export default {
   position: fixed;
   background-image: url(../assets/concrete.jpg);
   background-size: cover;
+  z-index: 50;
 }
 
 .beer-img {

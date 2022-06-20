@@ -93,7 +93,7 @@ nth-of-type : 擬似クラス、グループの中で指定された要素の位
 
 .menu {
   width: 200px;
-  height: 400px;
+  height: 350px;
   position: fixed;
   top: 0;
   right: 0;
@@ -101,7 +101,6 @@ nth-of-type : 擬似クラス、グループの中で指定された要素の位
 
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   background: black;
 }
@@ -111,12 +110,15 @@ nth-of-type : 擬似クラス、グループの中で指定された要素の位
 }
 
 .menu__item {
-  width: 100%;
-  height: 5%;
-  padding: 20%;
+  width: 160px;
+  height: 50px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border: solid 1px white;
+  box-shadow: 6px 6px black, 6px 6px 0 1px white;
   text-align: center;
+  line-height: 50px;
   color: white;
-  box-sizing: border-box;
 }
 
 .menu {
