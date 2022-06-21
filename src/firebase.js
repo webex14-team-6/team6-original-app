@@ -3,13 +3,13 @@ import { getFirestore } from "firebase/firestore"
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBkf_cuVnbs-cu-9bGy_ZogGsKLiFMlFmQ",
-  authDomain: "team6-original-app.firebaseapp.com",
-  projectId: "team6-original-app",
-  storageBucket: "team6-original-app.appspot.com",
-  messagingSenderId: "349348355384",
-  appId: "1:349348355384:web:2fa8c700db9bdca6c235cd",
-  measurementId: "G-26HMFK35RQ",
+  apiKey: "AIzaSyDWV0gL_iSWnTr4gbrBeLLQDpFiwBrr0ak",
+  authDomain: "team6-original-app-3eb13.firebaseapp.com",
+  projectId: "team6-original-app-3eb13",
+  storageBucket: "team6-original-app-3eb13.appspot.com",
+  messagingSenderId: "632059118716",
+  appId: "1:632059118716:web:1efc4ff6a55d7e5cacf5f9",
+  measurementId: "G-KZCZVTGCEV",
 }
 
 // Firebaseアプリオブジェクトを初期化
