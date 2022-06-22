@@ -521,4 +521,42 @@ export default {
   width: 300px;
   height: 100px;
 }
+
+@media screen and (max-width: 500px) {
+  .alcohol-category {
+    width: 300px;
+    height: 2400px;
+    padding: 50px 30px;
+    background-image: url(../assets/back-phone.png);
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .line-left {
+    width: 240px;
+  }
+
+  .line {
+    width: 240px;
+    height: 2px;
+    margin: 10px 0;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .line-right {
+    width: 240px;
+  }
+
+  .title {
+    width: 180px;
+    height: 70px;
+  }
+}
 </style>
