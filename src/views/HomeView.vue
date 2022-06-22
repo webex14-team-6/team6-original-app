@@ -176,6 +176,7 @@ h2 {
 .between img {
   width: 150px;
   height: 150px;
+  margin: auto;
 }
 
 /* 解説 */
@@ -231,9 +232,8 @@ footer {
 }
 
 footer img {
-  width: 180px;
-  height: 35px;
-  margin-left: -20px;
+  width: 140px;
+  height: 30px;
   margin-top: 30px;
 }
 
