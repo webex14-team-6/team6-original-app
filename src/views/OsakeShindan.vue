@@ -32,21 +32,13 @@
     </div>
     <div class="v-if-container" v-if="finishshow">
       <div class="flame2">
-        <h1 class="text-5xl py-10">あなたのオススメは…</h1>
+        <h1 class="animation1 text-5xl py-10">あなたのオススメは…</h1>
 
         <!-- 結果をここに表示 -->
         <div
           class="flex justify-around"
           v-if="this.string === '高甘柑橘炭酸和'"
         >
-          <div class="result">
-            <div class="result-name">チャミスル</div>
-            <div class="result-foto">
-              <div>
-                <img src="@/assets/chami.png" width="200" height="200" />
-              </div>
-            </div>
-          </div>
           <div class="result">
             <div class="result-name">チャミスル</div>
             <div class="result-foto">
@@ -67,102 +59,328 @@
             </div>
           </div>
         </div>
-        <div class="result" v-if="this.string === '高甘柑橘和'">
-          <div class="result-name">チャミスル</div>
-          <div class="result-foto"><img src="@/assets/chami.png" /></div>
+        <div class="flex justify-around" v-if="this.string === '高甘柑橘和'">
+          <div class="result">
+            <div class="result-name">チャミスル</div>
+            <div class="result-foto">
+              <div>
+                <img src="@/assets/chami.png" width="200" height="200" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '高甘柑橘洋'">
-          <div class="result-name">チャミスル</div>
-          <div class="result-foto"><img src="@/assets/chami.png" /></div>
-          <div class="result-name">サングリア</div>
-          <div class="result-foto"><img src="@/assets/sangria.png" /></div>
+        <div class="flex justify-around" v-if="this.string === '高甘柑橘洋'">
+          <div class="result">
+            <div class="result-name">チャミスル</div>
+            <div class="result-foto">
+              <div>
+                <img src="@/assets/chami.png" width="200" height="200" />
+              </div>
+            </div>
+          </div>
+          <div class="result">
+            <div class="result-name">サングリア</div>
+            <div class="result-foto">
+              <img src="@/assets/sangria.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '高甘炭酸和'">
-          <div class="result-name">ハイボール</div>
-          <div class="result-foto"><img src="@/assets/highball1.png" /></div>
+        <div class="flex justify-around" v-if="this.string === '高甘炭酸和'">
+          <div class="result">
+            <div class="result-name">コークハイ</div>
+            <div class="result-foto">
+              <img src="@/assets/cokehigh.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '高甘炭酸洋'">
-          <div class="result-name">ハイボール</div>
-          <div class="result-foto"><img src="@/assets/highball1.png" /></div>
+        <div class="flex justify-around" v-if="this.string === '高甘炭酸洋'">
+          <div class="result">
+            <div class="result-name">モスコミュール</div>
+            <div class="result-foto">
+              <img src="@/assets/moscowmule.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '高甘和'">
-          <div class="result-name">日本酒</div>
-          <div class="result-foto"><img src="@/assets/highball1.png" /></div>
+        <div class="flex justify-around" v-if="this.string === '高甘和'">
+          <div class="result">
+            <div class="result-name">日本酒(甘口)</div>
+            <div class="result-foto">
+              <img src="@/assets/sake1.png" width="200" height="200" />
+            </div>
+          </div>
+          <div class="flex justify-around">
+            <div class="result-name">梅ロック</div>
+            <div class="result-foto">
+              <img src="@/assets/umeshu.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '高甘洋'">
-          {{ this.result[7] }}
+        <div class="flex justify-around" v-if="this.string === '高甘洋'">
+          <div class="result">
+            <div class="result-name">ワイン(甘口)</div>
+            <div class="result-foto">
+              <img src="@/assets/wine.png" width="200" height="200" />
+            </div>
+          </div>
+          <div class="flex justify-around">
+            <div class="result-name">サングリア</div>
+            <div class="result-foto">
+              <img src="@/assets/sangria.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '高辛柑橘炭酸和'">
-          {{ this.result[8] }}
+        <div
+          class="flex justify-around"
+          v-if="this.string === '高辛柑橘炭酸和'"
+        >
+          <div class="result">
+            <div class="result-name">ハイボール</div>
+            <div class="result-foto">
+              <img src="@/assets/highball1.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '高辛柑橘炭酸洋'">
-          {{ this.result[9] }}
+        <div
+          class="flex justify-around"
+          v-if="this.string === '高辛柑橘炭酸洋'"
+        >
+          <div class="result">
+            <div class="result-name">スクリュードライバー</div>
+            <div class="result-foto">
+              <img src="@/assets/screwdriver1.jpg" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '高辛柑橘和'">
-          {{ this.result[10] }}
+        <div class="flex justify-around" v-if="this.string === '高辛柑橘和'">
+          <div class="result">
+            <div class="result-name">焼酎</div>
+            <div class="result-foto">
+              <img src="@/assets/shochu.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '高辛柑橘洋'">
-          {{ this.result[11] }}
+        <div class="flex justify-around" v-if="this.string === '高辛柑橘洋'">
+          <div class="result">
+            <div class="result-name">カミカゼ</div>
+            <div class="result-foto">
+              <img src="@/assets/kamikaze.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '高辛炭酸和'">
-          {{ this.result[12] }}
+        <div class="flex justify-around" v-if="this.string === '高辛炭酸和'">
+          <div class="result">
+            <div class="result-name">ハイボール</div>
+            <div class="result-foto">
+              <img src="@/assets/highball1.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '高辛炭酸洋'">
-          {{ this.result[13] }}
+        <div class="flex justify-around" v-if="this.string === '高辛炭酸洋'">
+          <div class="result">
+            <div class="result-name">キティ</div>
+            <div class="result-foto">
+              <img src="@/assets/kitty.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '高辛和'">
-          {{ this.result[14] }}
+        <div class="flex justify-around" v-if="this.string === '高辛和'">
+          <div class="result">
+            <div class="result-name">日本酒(辛口)</div>
+            <div class="result-foto">
+              <img src="@/assets/sake1.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '高辛洋'">
-          {{ this.result[15] }}
+        <div class="flex justify-around" v-if="this.string === '高辛洋'">
+          <div class="result">
+            <div class="result-name">ワイン(辛口)</div>
+            <div class="result-foto">
+              <img src="@/assets/wine.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低甘柑橘炭酸和'">
-          {{ this.result[16] }}
+        <div
+          class="flex justify-around"
+          v-if="this.string === '低甘柑橘炭酸和'"
+        >
+          <div class="result">
+            <div class="result-name">レモンサワー</div>
+            <div class="result-foto">
+              <img src="@/assets/lemonsour.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低甘柑橘炭酸洋'">
-          {{ this.result[17] }}
+        <div
+          class="flex justify-around"
+          v-if="this.string === '低甘柑橘炭酸洋'"
+        >
+          <div class="result">
+            <div class="result-name">レモンサワー</div>
+            <div class="result-foto">
+              <img src="@/assets/lemonsour.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低甘柑橘和'">
-          {{ this.result[18] }}
+        <div class="flex justify-around" v-if="this.string === '低甘柑橘和'">
+          <div class="result">
+            <div class="result-name">ファジーネーブル</div>
+            <div class="result-foto">
+              <img src="@/assets/fajinel.jpg" width="200" height="200" />
+            </div>
+          </div>
+          <div class="result">
+            <div class="result-name">カシオレ</div>
+            <div class="result-foto">
+              <img src="@/assets/cassisorange.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低甘柑橘洋'">
-          {{ this.result[19] }}
+        <div class="flex justify-around" v-if="this.string === '低甘柑橘洋'">
+          <div class="result">
+            <div class="result-name">ファジーネーブル</div>
+            <div class="result-foto">
+              <img src="@/assets/fajinel.jpg" width="200" height="200" />
+            </div>
+          </div>
+          <div class="result">
+            <div class="result-name">カシオレ</div>
+            <div class="result-foto">
+              <img src="@/assets/cassisorange.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低甘炭酸和'">
-          {{ this.result[20] }}
+        <div class="flex justify-around" v-if="this.string === '低甘炭酸和'">
+          <div class="result">
+            <div class="result-name">梅ソーダ</div>
+            <div class="result-foto">
+              <img src="@/assets/umesoda.png" width="200" height="200" />
+            </div>
+          </div>
+          <div class="result">
+            <div class="result-name">カルピスサワー</div>
+            <div class="result-foto">
+              <img src="@/assets/calpissour.png" width="200" height="200" />
+            </div>
+          </div>
+          <div class="result">
+            <div class="result-name">シャンディガフ</div>
+            <div class="result-foto">
+              <img src="@/assets/shandygaff.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低甘炭酸洋'">
-          {{ this.result[21] }}
+
+        <div class="flex justify-around" v-if="this.string === '低甘炭酸洋'">
+          <div class="result">
+            <div class="result-name">カルピスサワー</div>
+            <div class="result-foto">
+              <img src="@/assets/calpissour.png" width="200" height="200" />
+            </div>
+          </div>
+          <div class="result">
+            <div class="result-name">シャンディガフ</div>
+            <div class="result-foto">
+              <img src="@/assets/shandygaff.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低甘和'">
-          {{ this.result[22] }}
+        <div class="flex justify-around" v-if="this.string === '低甘和'">
+          <div class="result">
+            <div class="result-name">カルーア</div>
+            <div class="result-foto">
+              <img src="@/assets/kahluamilk.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低甘洋'">
-          {{ this.result[23] }}
+        <div class="flex justify-around" v-if="this.string === '低甘洋'">
+          <div class="result">
+            <div class="result-name">カルーア</div>
+            <div class="result-foto">
+              <img src="@/assets/kahluamilk.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低辛柑橘炭酸和'">
-          {{ this.result[24] }}
+        <div
+          class="flex justify-around"
+          v-if="this.string === '低辛柑橘炭酸和'"
+        >
+          <div class="result">
+            <div class="result-name">ビール</div>
+            <div class="result-foto">
+              <img src="@/assets/beer1.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低辛柑橘炭酸洋'">
-          {{ this.result[25] }}
+        <div
+          class="flex justify-around"
+          v-if="this.string === '低辛柑橘炭酸洋'"
+        >
+          <div class="result">
+            <div class="result-name">ビール</div>
+            <div class="result-foto">
+              <img src="@/assets/beer1.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低辛柑橘和'">
-          {{ this.result[26] }}
+        <div class="flex justify-around" v-if="this.string === '低辛柑橘和'">
+          <div class="result">
+            <div class="result-name">ファジーネーブル</div>
+            <div class="result-foto">
+              <img src="@/assets/fajinel.jpg" width="200" height="200" />
+            </div>
+          </div>
+          <div class="result">
+            <div class="result-name">カシオレ</div>
+            <div class="result-foto">
+              <img src="@/assets/cassisorange.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低辛柑橘洋'">
-          {{ this.result[27] }}
+        <div class="flex justify-around" v-if="this.string === '低辛柑橘洋'">
+          <div class="result">
+            <div class="result-name">ファジーネーブル</div>
+            <div class="result-foto">
+              <img src="@/assets/fajinel.jpg" width="200" height="200" />
+            </div>
+          </div>
+          <div class="result">
+            <div class="result-name">カシオレ</div>
+            <div class="result-foto">
+              <img src="@/assets/cassisorange.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低辛炭酸和'">
-          {{ this.result[28] }}
+        <div class="flex justify-around" v-if="this.string === '低辛炭酸和'">
+          <div class="result">
+            <div class="result-name">ビール</div>
+            <div class="result-foto">
+              <img src="@/assets/beer1.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低辛炭酸洋'">
-          {{ this.result[29] }}
+        <div class="flex justify-around" v-if="this.string === '低辛炭酸洋'">
+          <div class="result">
+            <div class="result-name">ビール</div>
+            <div class="result-foto">
+              <img src="@/assets/beer1.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低辛和'">
-          {{ this.result[30] }}
+        <div class="flex justify-around" v-if="this.string === '低辛和'">
+          <div class="result">
+            <div class="result-name">ウーロン・緑茶・ジャスミンハイ</div>
+            <div class="result-foto">
+              <img src="@/assets/peachoolong.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
-        <div class="result" v-if="this.string === '低辛洋'">
-          {{ this.result[31] }}
+        <div class="flex justify-around" v-if="this.string === '低辛洋'">
+          <div class="result">
+            <div class="result-name">サングリア</div>
+            <div class="result-foto">
+              <img src="@/assets/sangria.png" width="200" height="200" />
+            </div>
+          </div>
         </div>
         <div flex justify-center>
           <button class="retry-button" v-on:click="retry">もう一度！</button>
@@ -177,7 +395,6 @@
 
 <script>
 import users from "../assets/data.json"
-// import axios from "axios"
 export default {
   components: {},
   data() {
@@ -201,42 +418,6 @@ export default {
         { text: "炭酸が飲みたい" },
         { text: "和か洋かだったら和だ" },
       ],
-      result: [
-        /*結果内容をここの配列に入れる*/
-        "高甘柑橘炭酸洋の結果",
-        "高甘柑橘和",
-        "高甘柑橘洋",
-        "高甘炭酸和",
-        "高甘炭酸洋",
-        "高甘和",
-        "高甘洋",
-        "高辛柑橘炭酸和",
-        "高辛柑橘炭酸洋",
-        "高辛柑橘和",
-        "高辛柑橘洋",
-        "高辛炭酸和",
-        "高辛炭酸洋",
-        "高辛和",
-        "高辛洋",
-        "低甘柑橘炭酸和",
-        "低甘柑橘炭酸洋",
-        "低甘柑橘和",
-        "低甘柑橘洋",
-        "低甘炭酸和",
-        "低甘炭酸洋",
-        "低甘和",
-        "低甘洋",
-        "低辛柑橘炭酸和",
-        "低辛柑橘炭酸洋",
-        "低辛柑橘和",
-        "低辛柑橘洋",
-        "低辛炭酸和",
-        "低辛炭酸洋",
-        "低辛和",
-        "低辛洋",
-      ],
-      //追加しました
-      results: [],
     }
   },
   created() {
@@ -434,6 +615,19 @@ export default {
 .animation2 {
   animation: question-apper 0.2s 0s 1 forwards;
 }
+/* 結果ができるときのアニメーション */
+@keyframes result-apper {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .result {
   width: 300px;
   font-size: 15px;
@@ -443,7 +637,9 @@ export default {
   margin: 2rem;
   padding: 1mm;
   box-shadow: 0 0 0 2px #000000, 6px 6px 0 0 #fff, 6px 6px 0 2px #000000;
+  animation: result-apper 1s ease-out 0s 1 forwards;
 }
+
 .result-foto {
   display: flex;
   justify-content: center;
