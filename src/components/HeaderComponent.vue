@@ -33,6 +33,7 @@ export default {
   width: 140px;
   height: 140px;
   margin: auto;
+  padding-top: 30px;
   background-image: url(../assets/neonbeer.png);
   background-size: cover;
 }
@@ -42,27 +43,23 @@ h1 {
 }
 
 h1 img {
-  width: 200px;
-  height: 40px;
-  margin-left: -30px;
-  margin-top: 30px;
+  width: 140px;
+  height: 30px;
 }
 
 @media screen and (max-width: 500px) {
   .header {
-    height: 80px;
-  }
-
-  .beer-img {
-    width: 100px;
     height: 100px;
   }
 
+  .beer-img {
+    width: 120px;
+    height: 120px;
+  }
+
   h1 img {
-    width: 150px;
-    height: 30px;
-    margin-left: -25px;
-    margin-top: 20px;
+    width: 120px;
+    height: 24px;
   }
 }
 </style>

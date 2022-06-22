@@ -129,27 +129,4 @@ nth-of-type : 擬似クラス、グループの中で指定された要素の位
 .menu.active {
   transform: translateX(0);
 }
-
-@media screen and (max-width: 500px) {
-  .openbtn {
-    width: 60px;
-    height: 60px;
-  }
-
-  .openbtn span {
-    height: 4px;
-  }
-
-  .openbtn span:nth-of-type(1) {
-    top: 20px;
-  }
-
-  .openbtn span:nth-of-type(2) {
-    top: 30px;
-  }
-
-  .openbtn span:nth-of-type(3) {
-    top: 40px;
-  }
-}
 </style>
