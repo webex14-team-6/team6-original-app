@@ -127,7 +127,7 @@ export default {
   width: 700px;
   height: 380px;
   margin: auto;
-  margin-top: -30px;
+  margin-top: -40px;
   background-color: white;
   border: solid black;
 
@@ -137,6 +137,7 @@ export default {
 
 h2 {
   font-size: 50px;
+  font-weight: bold;
   margin-block-start: 0em;
   margin-block-end: 0em;
   letter-spacing: 0.2em;
@@ -188,7 +189,7 @@ h2 {
   width: 600px;
   height: 280px;
   margin: auto;
-  margin-top: -30px;
+  margin-top: -40px;
   background-color: white;
   border: solid black;
 
