@@ -279,6 +279,11 @@ footer img {
     margin-top: 0;
   }
 
+  .home-background {
+    height: 4180px;
+    background-size: contain;
+  }
+
   .shindan-container {
     width: 300px;
     height: 480px;

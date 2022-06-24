@@ -525,7 +525,7 @@ export default {
 @media screen and (max-width: 500px) {
   .alcohol-category {
     width: 300px;
-    height: 2400px;
+    height: 2390px;
     padding: 50px 30px;
     background-image: url(../assets/back-phone.png);
     flex-direction: column;
